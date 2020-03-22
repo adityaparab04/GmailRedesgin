@@ -1,0 +1,407 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container{
+  display: grid;
+  grid-template-areas: 'nav nav'
+                       'sidebar mainbody';
+  height: 100vh;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 8vh auto;
+}
+
+.nav{
+  grid-area: nav;
+  display: grid;
+  grid-template-areas: 'logo searchbar icons';
+  grid-template-columns: 4.5fr 8fr 10fr;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.sidebar{
+  grid-area: sidebar;
+  border-right: 1px solid rgba(0,0,0,0.06);
+}
+
+.mainbody{
+  grid-area: mainbody;
+  display: grid;
+  grid-template-areas: 'bodynav bodynav'
+                       'messages message';
+  grid-template-columns: 3fr 5fr;
+  grid-template-rows: 7vh auto;
+}
+
+.body-nav{
+  grid-area: bodynav;
+  display: grid;
+  grid-template-areas: 'messagessetting pagesetting';
+  grid-template-columns: 4fr 5fr;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.messages{
+  grid-area: messages;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0,0,0,0.06);
+}
+
+.message{
+  grid-area: message;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.messagessetting{
+  grid-area: messagessetting;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pagesetting{
+  grid-area: pagesetting;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* nav */
+
+.logo{
+  grid-area: logo;
+  margin: auto auto;
+}
+
+.gmail{
+  width: 109px;
+  height: 50px;
+  display: block;
+  background: url('https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png') no-repeat;
+}
+
+.searchbar{
+  grid-area: searchbar;
+  margin: auto auto;
+  width: 100%;
+}
+
+.input {
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.04);
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.input input{
+  width: 85%;
+  margin: 10px 10px;
+  border: none;
+  border-color: transparent;
+  background: rgba(0,0,0,0);
+}
+
+.input input::placeholder{
+  color: rgba(0,0,0,0.2);
+}
+
+.input input:focus{
+  outline: none;
+}
+
+.input i{
+  color: rgba(0,0,0,0.6);
+  padding: 10px 5px;
+}
+
+.icons{
+  grid-area: icons;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.bell{
+  margin: 10px 20px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 100px;
+  background: black;
+  color: white;
+  padding: 2px;
+  font-size: 14px;
+}
+
+.profile{
+  width: 40px;
+  height: 40px;
+  background: rgb(1, 51, 1);
+  border-radius: 100%;
+  color: white;
+  text-align: center;
+  margin-right: 60px;
+}
+
+.profile h1{
+  font-size: 1.5rem;
+  margin: 3px;
+}
+
+/* nav */
+
+/* sidebar */
+
+.btn-container{
+  width: 100%;
+  text-align: center;
+}
+
+.btn{
+  border: none;
+  background: #D14752;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 30px;
+  margin: 20px auto;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.sidebar-navigation{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.9rem;
+}
+
+.bar{
+  padding: 10px 60px;
+  color: rgba(0,0,0,0.7);
+  margin: 10px 0;
+}
+
+.bar p{
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.active-sidebar{
+  color: #D14752;
+  border-left: 5px solid #D14752;
+}
+
+/* sidebar */
+
+/* message setting */
+.drop{
+  background: rgba(0,0,0,0.04);
+  font-size: 10px;
+  padding: 5px 8px;
+  margin-left: 30px;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.6);
+}
+
+.box{
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: white;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.refresh{
+  margin-left: 20px;
+  background: rgba(0,0,0,0.04);
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.6);
+}
+
+.more{
+  margin-left: 20px;
+  background: rgba(0,0,0,0.04);
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.6);
+}
+/* message setting */
+
+/* page setting */
+.arrow-left{
+  margin-right: 20px;
+  background: rgba(0,0,0,0.04);
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.6);
+}
+
+.arrow-right{
+  margin-right: 20px;
+  background: rgba(0,0,0,0.04);
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.6);
+}
+
+.setting-btn{
+  margin-right: 50px;
+  background: rgba(0,0,0,0.8);
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: white;
+}
+/* page setting */
+
+/* messages */
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 10px;
+}
+
+.card.active{
+  border-left: 5px solid #D14752;
+  background: rgba(0,0,0,0.04);
+}
+
+.whosent{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.name{
+  font-weight: bold;
+}
+
+.cardmessage{
+  color: rgba(0,0,0,0.6);
+}
+
+.card-profile{
+  width: 40px;
+  height: 40px;
+  background: rgb(1, 51, 1);
+  border-radius: 100%;
+  color: white;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card-profile p{
+  font-size: 1.5rem;
+  margin: 3px;
+}
+
+.time{
+  color: rgba(0,0,0,0.4);
+  font-size: 0.8rem;
+}
+
+.card-profile.yellow{
+  background: yellow;
+  color: black;
+}
+
+.card-profile.blue{
+  background: blue;
+}
+/* messages */
+
+/* message */
+.somesettings{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px;
+}
+.somesettings p span{
+  color: #D14752;
+}
+.bt{
+  margin-right: 5px;
+  background: rgba(0,0,0,0.04);
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.6);
+}
+.bt.star{
+  color: rgb(230, 230, 10);
+}
+.morebtns{
+  display: flex;
+  flex-direction: row;
+}
+
+.message .head{
+  color: rgba(0,0,0,0.9);
+  font-size: 2rem;
+  padding-bottom: 30px;
+}
+
+.message-container{
+  color: rgba(0,0,0,0.7);
+  padding-left: 30px;
+  padding-bottom: 2px;
+}
+
+p.padding {
+  padding-bottom: 20px;
+}
+
+.message{
+  margin-bottom: 40px;
+}
+
+.btns{
+  display: flex;
+  flex-direction: row;
+  padding-left: 30px
+}
+
+.reply p{
+  display: inline-block;
+}
+
+.btn3{
+  background: rgba(0,0,0,0.04);
+  margin-right: 20px;
+  padding: 10px 20px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  color: rgba(0,0,0,0.6)
+}
+
+.btn3 i{
+  padding-right: 10px;
+}
+
+.forward p{
+  display: inline-block;
+}
+/* message */
